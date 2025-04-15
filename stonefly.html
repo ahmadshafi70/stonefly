@@ -66,9 +66,7 @@
 }
 
 /* Only rotate the arrow of the active dropdown */
-.sidebar-menu li.has-dropdown.open > .dropdown-toggle > .arrow {
-  transform: rotate(180deg);
-}
+
 
 .submenu {
   display: none;
@@ -403,6 +401,7 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
 /* Only rotate the arrow of the opened li's direct dropdown-toggle */
 .sidebar-menu li.has-dropdown.open > .dropdown-toggle > .arrow {
   transform: rotate(180deg);
+  transition: transform 0.2s ease;
 }
 .submenu .submenu {
   padding-left: 15px;
@@ -439,6 +438,9 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
 .dashboard-content .info-item {
   margin-bottom: 10px;
   display: flex;
+}
+.dashboard-content .info-item p{
+
 }
 
 .dashboard-content .info-label {
@@ -508,13 +510,13 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
 }
 
 .dashboard-content .open-btn {
-  color: white;
-  background: #3498db;
+  color: #414F65 !important;
+ font-weight: 600;
   border: none;
-  padding: 8px 16px;
-  border-radius: 4px;
+  padding: 3px 16px;
+  border-radius: 10px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 13px;
   margin-top: 10px;
   transition: background 0.2s;
 }
@@ -565,7 +567,8 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
 
       .info-text {
         text-align: left;
-        margin-left: 10px; /* Adds space between text and the first icon */
+        font-size: 16px;
+        font-weight: 700;
       }
 
       .info-item i {
@@ -860,12 +863,20 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
  overflow: hidden;
 }
 
-.resources-table th,
+.resources-table th {
+  text-align: center;
+  padding: 16px;
+  color: #606060;
+  border: 1.5px solid #000022 !important;
+  font-size: 16px;
+  background-color: #f4f4f4;
+}
 .resources-table td {
   text-align: center;
   padding: 12px;
+  color:#000022;
   border: 1.5px solid #000022 !important;
-  font-size: 14px;
+  font-size: 12px;
   background-color: #f4f4f4;
 }
 
@@ -914,12 +925,13 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
 
 .progress-bar {
   display: flex;
-  height: 14px;
+  height: 25px;
   width: 100%;
   border-radius: 7px;
   overflow: hidden;
   margin-top: -10px;
-  margin-bottom: 12px;
+  margin-bottom: -10px;
+  
 }
 
 .progress-bar .used {
@@ -927,7 +939,7 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
   color: white;
   font-size: 12px;
   text-align: center;
-  line-height: 14px;
+  /* line-height: 14px; */
 }
 
 .progress-bar .available {
@@ -954,6 +966,18 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
 /* This will rotate ONLY when we add 'rotate' via JS */
 .sidebar-menu .arrow.rotate {
   transform: rotate(180deg);
+}
+.info-text-box {
+  display: block;
+  margin-left: 10px;
+} 
+.info-ip {
+  text-align: left;
+  margin-top: -10px;
+}
+.info-icon {
+  width: 45px;
+  height: 45px;
 }
   </style>
 </head>
@@ -1006,7 +1030,7 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
           </li>
           <div class="menu-divider"></div>
           <li class="has-dropdown">
-            <span class="dropdown-toggle top-level">Resources <i class="fas fa-chevron-down arrow"></i></span>
+            <span class="dropdown-toggle top-level" >Resources <i class="fas fa-chevron-down arrow"></i></span>
             <ul class="submenu">
               <li>Create Flash Cache</li>
               <li>Flash Cache Configuration</li>
@@ -1071,18 +1095,26 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
                       <div class="info-item">
                         
                         <img class="info-icon" src="assets/Asset-1-1.png" alt="Logo" class="logo" />
-                        <span class="info-text">ISCSI SAN IP:<br>192.168.10.255</span>
+                        <div class="info-text-box">
+                          <p class="info-text">ISCSI SAN IP:</p>
+                          <p class="info-ip">192.168.10.255</p>
+                        </div>
+                       
                    
                       </div>
                       <div class="info-item">
-                        <img class="info-icon" src="/assets/Asset-2-1.png" alt="Logo" class="logo" />
-                        <span class="info-text">NAS LAN IP:<br>192.168.10.255</span>
-                      
+                        <img class="info-icon" src="assets/Asset-2-1.png" alt="Logo" class="logo" />
+                        <div class="info-text-box">
+                          <p class="info-text">NAS LAN IP:</p>
+                          <p class="info-ip">192.168.10.255</p>
+                        </div> 
                       </div>
                       <div class="info-item">
-                        <img class="info-icon" src="/assets/Asset-3-1.png" alt="Logo" class="logo" />
-                        <span class="info-text">ISCSI LAN IP:<br>192.168.10.255</span>
-                      
+                        <img class="info-icon" src="assets/Asset-3-1.png" alt="Logo" class="logo" />
+                        <div class="info-text-box">
+                          <p class="info-text">ISCSI LAN IP:</p>
+                          <p class="info-ip">192.168.10.255</p>
+                        </div>
                       </div>
                     </div>
                 
@@ -1168,7 +1200,7 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
                     
                     <div class="resources-container">
                       <div class="resources-header">
-                        <h2 style="color: #606060;">Resources</h2>
+                        <h2 style="font-size: 20px;font-weight: 500;color: #606060;margin-left: 30px;" >Resources</h2>
                         <div class="legend">
                           <div><span class="legend-box used"></span>Used</div>
                           <div><span class="legend-box available"></span>Available</div>
@@ -1371,60 +1403,62 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
         
       </script>
         <!-- Include ProgressBar.js -->
-  <script src="https://cdn.jsdelivr.net/npm/progressbar.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/progressbar.js"></script>
+        <script>
+         var bar1 = new ProgressBar.Circle('#network-revd', {
+           strokeWidth: 6,
+           easing: 'easeInOut',
+           duration: 1400,
+           color: '#3f51b5',
+           trailColor: '#e4e5e6',
+           trailWidth: 6,
+           svgStyle: null
+         });
+     
+         bar1.animate(0.06); // 6% for 0.06 Mbps
+     
+         var bar2 = new ProgressBar.Circle('#network-sent', {
+           strokeWidth: 6,
+           easing: 'easeInOut',
+           duration: 1400,
+           color: '#d13611',
+           trailColor: '#e4e5e6',
+           trailWidth: 6,
+           svgStyle: null
+         });
+     
+         bar2.animate(0.2); // 5% for 0.05 Mbps
+       </script>
        <script>
-        var bar1 = new ProgressBar.Circle('#network-revd', {
-          strokeWidth: 6,
-          easing: 'easeInOut',
-          duration: 1400,
-          color: '#3f51b5',
-          trailColor: '#e4e5e6',
-          trailWidth: 6,
-          svgStyle: null
-        });
-    
-        bar1.animate(0.06); // 6% for 0.06 Mbps
-    
-        var bar2 = new ProgressBar.Circle('#network-sent', {
-          strokeWidth: 6,
-          easing: 'easeInOut',
-          duration: 1400,
-          color: '#d13611',
-          trailColor: '#e4e5e6',
-          trailWidth: 6,
-          svgStyle: null
-        });
-    
-        bar2.animate(0.2); // 5% for 0.05 Mbps
-      </script>
-      <script>
-       $(function () {
-  $('.sidebar-menu').on('click', '.dropdown-toggle', function (e) {
-    e.stopPropagation();
+          $(function () {
+              $('.sidebar-menu').on('click', '.dropdown-toggle', function (e) {
+                e.stopPropagation();
 
-    const $toggle = $(this); // the clicked dropdown-toggle
-    const $li = $toggle.closest('li'); // get the <li> container
-    const $submenu = $li.children('.submenu'); // find submenu in that li
-    const $arrow = $toggle.find('.arrow'); // only the arrow inside THIS toggle
+                const $toggle = $(this);
+                const $li = $toggle.closest('li');
+                const $submenu = $li.children('ul.submenu');
+                const $arrow = $toggle.find('> .arrow'); // only direct arrow, not nested
 
-    if ($li.hasClass('open')) {
-      $submenu.slideUp(200);
-      $li.removeClass('open');
-      $arrow.removeClass('rotate');
-    } else {
-      $submenu.slideDown(200);
-      $li.addClass('open');
-      $arrow.addClass('rotate');
-    }
+                if ($li.hasClass('open')) {
+                  $submenu.slideUp(200);
+                  $li.removeClass('open');
+                  $arrow.removeClass('rotate');
+                } else {
+                  $submenu.slideDown(200);
+                  $li.addClass('open');
+                  $arrow.addClass('rotate');
 
-    // ❗ Optional: Reset other arrows
-    $li.siblings('li').find('.arrow').removeClass('rotate');
-    $li.siblings('li').removeClass('open').find('.submenu').slideUp(200);
-  });
-});
+                  // Only close sibling LIs on the same level (not nested ones)
+                  $li.siblings('.has-dropdown').removeClass('open')
+                    .children('ul.submenu').slideUp(200);
+                  $li.siblings('.has-dropdown')
+                    .find('> .dropdown-toggle > .arrow').removeClass('rotate');
+                }
+              });
+            });
 
-
-      </script>
+ 
+       </script>
       
 
   
