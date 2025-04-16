@@ -5,17 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dashboard</title>
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-<!-- Font Awesome 6 (Icons) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+  <!-- Inter Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- Poppins Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <style>
  .dashboard {
   width: 100%;
   background-color: #ffffff; /* Or whatever background you need */
+  min-height: 100vh; /* Makes it at least full screen height */
 }
 
 .dashboard-content {
@@ -24,8 +30,10 @@
   padding: 60px 100px; /* Controls internal spacing */
   box-sizing: border-box;
   box-shadow: none; /* Removes the box shadow */
+  background-color: #ffffff; /* Or whatever background you need */
 }
   .sidebar-menu ul li {
+    font-family: 'Montserrat', sans-serif;
   position: relative;
   padding: 10px 15px;
   transition: background 0.2s ease;
@@ -36,6 +44,7 @@
 }
 
 .sidebar-menu ul li span {
+
   display: flex;
   align-items: center;
  
@@ -50,7 +59,7 @@
 }
 
 .sidebar-menu ul li ul.submenu li {
-  padding: 8px 12px;
+  padding: 2px 8px;
   font-size: 14px;
   color: #ccc;
 }
@@ -239,7 +248,7 @@ body {
   background: #606060;
   color: white;
   /* height: 100vh; */
-  padding: 20px 10px;
+  padding: 20px 0px;
   display: flex;
   flex-direction: column;
 }
@@ -271,6 +280,7 @@ body {
   background: #00bcd4;
   padding: 5px 10px;
   border-radius: 4px;
+  margin: 0px 10px 10px 10px;
 }
 
 .sidebar-menu ul li ul {
@@ -792,8 +802,8 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
   
     /* Memory - smaller canvas */
     #memory {
-      width: 140px !important;
-      height: 140px !important;
+      width: 110px !important;
+      height: 110px !important;
     }
   
     h4 {
@@ -828,8 +838,10 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
       .menu-divider {
         margin-top: 15px;
         width:100% ;
-        height: 1px;
+        height: 0.5px;
         background-color:#ffffff ;
+        transform: scaleY(0.5);
+        transform-origin: top;
       }
       .logo-bg {
         margin: auto;
@@ -849,7 +861,7 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
   object-fit: contain;
 }
 .top-level {
-  font-family: poppins;
+  font-family: Montserrat;
   font-weight: 700;
   font-size: 16px;
   line-height: 100%;
@@ -979,6 +991,132 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
   width: 45px;
   height: 45px;
 }
+.arrow,
+.sub-arrow {
+  transition: transform 0.3s ease;
+  color: white;
+  font-size: 12px;
+  margin-left: 5px;
+}
+.rotate {
+  transform: rotate(180deg);
+}
+.legend {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: Poppins, sans-serif;
+  color: #414F65;
+}
+
+.legend-box-one,
+.legend-box-two,
+.legend-box-three {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  margin-right: 8px;
+}
+
+/* Specific border colors */
+.legend-box-one {
+  border: 2px solid #1976d2;
+}
+.legend-box-two {
+  border: 2px solid #00bfa5;
+}
+.legend-box-three {
+  border: 2px solid #1ea2ca;
+}
+
+/* Inner color box */
+.inner-box {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 2px;
+}
+
+/* Fill colors */
+.used {
+  background-color: #0171BC;
+}
+.available {
+  background-color: #00bfa5;
+}
+.unmanaged {
+  background-color: #1ea2ca;
+}
+
+.gauge-container {
+  width: 200px;
+  text-align: center;
+  margin: 20px auto;
+}
+
+.gauge {
+  width: 100%;
+  height: auto;
+}
+
+.gauge-bg {
+  fill: none;
+  stroke: #eee;
+  stroke-width: 14;
+}
+
+.gauge-fill {
+  fill: none;
+  stroke: #FF9500;
+  stroke-width: 14;
+  stroke-dasharray: 283;
+  stroke-dashoffset: 283;
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+.needle {
+  stroke: #444;
+  stroke-width: 4;
+  transform-origin: 100px 100px;
+  transform: rotate(-90deg);
+  transition: transform 0.5s ease;
+}
+
+#gauge-value {
+  fill: #ccc;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.label {
+  font-size: 10px;
+  fill: #888;
+}
+
+.gauge-label {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+}
+@media (max-width: 1280px) {
+  .triangle {
+    display: none !important;
+  }
+  .triangle-left {
+    display: none !important;
+  }
+  .triangle-right {
+    display: none !important;
+  }
+}
   </style>
 </head>
 <body>
@@ -999,9 +1137,9 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
             <span class="dropdown-toggle top-level">SAN <i class="fas fa-chevron-down arrow"></i></span>
             <ul class="submenu">
               <li class="has-dropdown">
-                <span class="dropdown-toggle">Volume <i class="fas fa-chevron-down arrow"></i></span>
+                <span class="dropdown-toggle">Volume <i class="fas fa-chevron-down sub-arrow"></i></span>
                 <ul class="submenu">
-                  <li>Create New Volume</li>
+                  <h3 style="font-size: 14px;font-weight: 500;">Create New Volume</h3>
                   <li>Auto Create</li>
                   <li>Manual Create</li>
                 </ul>
@@ -1012,13 +1150,13 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
             </ul>
           </li>
           <div class="menu-divider"></div>
-          <li>Target Portal</li>
+          <li> <span class="top-level">Target Portal<i class="fas fa-chevron-down arrow"></i></span></li>
           <div class="menu-divider"></div>
           <li class="has-dropdown">
             <span class="dropdown-toggle top-level">NAS <i class="fas fa-chevron-down arrow"></i></span>
             <ul class="submenu">
               <li class="has-dropdown">
-                <span class="dropdown-toggle">Segment <i class="fas fa-chevron-down arrow"></i></span>
+                <span class="dropdown-toggle">Segment <i class="fas fa-chevron-down sub-arrow"></i></span>
                 <ul class="submenu">
                   <li>LAN</li>
                   <li>WAN</li>
@@ -1088,7 +1226,7 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
                     <div class="dashboard-divider"></div>
                     <div class="info-section">
                       <div class="info-item">
-                        <span class="info-text"><strong>Information</strong></span>
+                        <span class="info-text" style="font-size: 20px;">Information</span>
                         <i class="fas fa-angle-right" style="margin-top: 10px;"></i>
                        
                       </div>
@@ -1134,6 +1272,7 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
                               <h4 style="font-color:#b4aea8;color: #bcc1c2;">Memory</h4>
                             </div>
                           </div>
+                          
                         </div>
                           <!-- Divider -->
                             <div class="divider"></div>
@@ -1166,7 +1305,7 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
                               ISCSI IP: 192.168.10.250
                             </p>
                           </div>
-                          <img src="assets/01-05-GUI-13 1.png" style="position:relative;width: 116px; height: 77px;top: 50px; left: 40px;" alt="Concentrator" />
+                          <img src="assets/01-05-GUI-13 1.png" style="position:relative;width: 116px; height: 77px;top: 50px; margin-left: 40px;" alt="Concentrator" />
                         </div>
                       </div>
                     
@@ -1178,7 +1317,7 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
                             <strong>Customer  </strong>
                             <strong>Support</strong>
                           </div>
-                          <img src="assets/01-05-GUI-17 1.png" style="position:relative;width: 63px; height: 71px;top: 50px; left: 120px;" alt="Support" />
+                          <img src="assets/01-05-GUI-17 1.png" style="position:relative;width: 63px; height: 71px;top: 30px; margin-left: 120px;" alt="Support" />
                         </div>
                       </div>
                     
@@ -1193,7 +1332,7 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
                             </p>
                             <button class="open-btn">Open</button>
                           </div>
-                          <img src="assets/01-05-GUI-12 1.png" style="position:relative;width: 117px; height: 44px;top: 50px; left: 70px;" alt="SC" />
+                          <img src="assets/01-05-GUI-12 1.png" style="position:relative;width: 117px; height: 44px;top: 50px; margin-left: 70px;" alt="SC" />
                         </div>
                       </div>
                     </div>
@@ -1202,10 +1341,11 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
                       <div class="resources-header">
                         <h2 style="font-size: 20px;font-weight: 500;color: #606060;margin-left: 30px;" >Resources</h2>
                         <div class="legend">
-                          <div><span class="legend-box used"></span>Used</div>
-                          <div><span class="legend-box available"></span>Available</div>
-                          <div><span class="legend-box unmanaged"></span>Not Managed</div>
+                          <div><span class="legend-box-one"><span class="used inner-box"></span></span>Used</div>
+                          <div><span class="legend-box-two"><span class="available inner-box"></span></span>Available</div>
+                          <div><span class="legend-box-three"><span class="unmanaged inner-box"></span></span>Not Managed</div>
                         </div>
+                        
                       </div>
                     
                       <table class="resources-table">
@@ -1292,7 +1432,9 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
                         </tbody>
                       </table>
                     </div>
-                    
+                    <div style="height: 200px;">
+
+                    </div>
                   </div>
                 
                 </div>
@@ -1430,35 +1572,35 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
          bar2.animate(0.2); // 5% for 0.05 Mbps
        </script>
        <script>
-          $(function () {
-              $('.sidebar-menu').on('click', '.dropdown-toggle', function (e) {
-                e.stopPropagation();
+       $(function () {
+  $('.sidebar-menu').on('click', '.dropdown-toggle', function (e) {
+    e.stopPropagation();
 
-                const $toggle = $(this);
-                const $li = $toggle.closest('li');
-                const $submenu = $li.children('ul.submenu');
-                const $arrow = $toggle.find('> .arrow'); // only direct arrow, not nested
+    const $toggle = $(this);
+    const $li = $toggle.closest('li');
+    const $submenu = $li.children('ul.submenu');
 
-                if ($li.hasClass('open')) {
-                  $submenu.slideUp(200);
-                  $li.removeClass('open');
-                  $arrow.removeClass('rotate');
-                } else {
-                  $submenu.slideDown(200);
-                  $li.addClass('open');
-                  $arrow.addClass('rotate');
+    // Check for top-level or nested arrow
+    const $arrow = $toggle.find('> .arrow');
+    const $subArrow = $toggle.find('> .sub-arrow');
 
-                  // Only close sibling LIs on the same level (not nested ones)
-                  $li.siblings('.has-dropdown').removeClass('open')
-                    .children('ul.submenu').slideUp(200);
-                  $li.siblings('.has-dropdown')
-                    .find('> .dropdown-toggle > .arrow').removeClass('rotate');
-                }
-              });
-            });
+    if ($li.hasClass('open')) {
+      $submenu.slideUp(200);
+      $li.removeClass('open');
+      $arrow.removeClass('rotate');
+      $subArrow.removeClass('rotate');
+    } else {
+      $submenu.slideDown(200);
+      $li.addClass('open');
+      $arrow.addClass('rotate');
+      $subArrow.addClass('rotate');
+    }
+  });
+});
 
- 
-       </script>
+
+
+          </script>
       
 
   
