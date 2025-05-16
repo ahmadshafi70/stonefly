@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="assets//css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Inter:wght@400;600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+
+  
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="assets/font-awsome/css/all.min.css"  referrerpolicy="no-referrer" />
+  <script src="assets/js/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+  <div class="container">
+    <button class="mobile-menu-toggle">
+      <i class="fas fa-bars"></i>
+    </button>
+    <aside class="sidebar">
+      <div class="sidebar-header" >
+        
+        <div class="logo-bg">
+          <img src="assets/Stonefly-logo.png" alt="Logo" />
+        </div>
+        <p style="font-family:Montserrat;font-size: 12px;font-weight: 700;">SC-172-125-02-211</p>
+        <p style="font-family:Montserrat;font-size: 12px;font-weight: 300;opacity:0.5;margin-top: -10px;">Administrator</p>
+      </div>
+      
+      <nav class="sidebar-menu">
+        <ul>
+          <li class="active">Dashboard</li>
+          
+          <li class="has-dropdown open">
+            <span class="dropdown-toggle top-level ">SAN <i class="fa fa-chevron-down arrow"></i></span>
+            <ul class="submenu">
+              <li class="has-dropdown open">
+                <span class="dropdown-toggle">Volume <i class="fa fa-chevron-down sub-arrow"></i></span>
+                <ul class="submenu">
+                  <h3 style="font-size: 14px;font-weight: 500;color: white;">Create New Volume</h3>
+                  <li>Auto Create</li>
+                  <li>Manual Create</li>
+                </ul>
+              </li>
+              
+              <li>Host</li>
+              <li>Sessions</li>
+            </ul>
+          </li>
+        
+          <li> <span class="top-level">Target Portal<i class="fas fa-chevron-down arrow"></i></span></li>
+          <div class="menu-divider"></div>
+          <li class="has-dropdown open">
+            <span class="dropdown-toggle top-level ">NAS <i class="fas fa-chevron-down arrow"></i></span>
+            <ul class="submenu ">
+              <li class="has-dropdown open">
+                <span class="dropdown-toggle">Segment <i class="fas fa-chevron-down sub-arrow"></i></span>
+                <ul class="submenu">
+                  <li>LAN</li>
+                  <li>WAN</li>
+                </ul>
+              </li>
+              <li>Antivirus</li>
+              <li>Scaleout</li>
+            </ul>
+          </li>
+          <div class="menu-divider"></div>
+          <li class="has-dropdown open">
+            <span class="dropdown-toggle top-level" >Resources <i class="fas fa-chevron-down arrow"></i></span>
+            <ul class="submenu">
+              <li>Create Flash Cache</li>
+              <li>Flash Cache Configuration</li>
+              <li>Create Object Storage</li>
+              <li>Detail</li>
+            </ul>
+          </li>
+          <div class="menu-divider"></div>
+          <li class="has-dropdown open">
+            <span class="dropdown-toggle top-level">System <i class="fas fa-chevron-down arrow"></i></span>
+            <ul class="submenu">
+              <li>Admin</li>
+              <li>Network</li>
+              <li>iDiagnostics</li>
+              <li>Notifications</li>
+              <li>UPS</li>
+              <li>Users</li>
+            </ul>
+          </li>
+          <div class="menu-divider"></div>
+          <li class="has-dropdown open">
+            <span class="dropdown-toggle top-level">Reports <i class="fas fa-chevron-down arrow"></i></span>
+            <ul class="submenu">
+              <li>Log</li>
+              <li>Configuration Report</li>
+              <li>Historical Statistics</li>
+              <li>Debug Logs</li>
+              <li>Live Statistics</li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <!-- Main Content -->
+    <main class="main">
+      <!-- Top Bar -->
+     
+      <div class="dashboard">
+        <div class="dashboard-content">
+                    <header class="topbar">
+                      <div class="user-status">
+                        <div class="user-pic"></div>
+                        <div class="user-info">
+                          <p>Welcome</p>
+                          <strong>SC-172-125-02-211</strong>
+                          <p>Status <span class="status good" style="color: white;margin-left: 5px;">Good</span></p>
+                        </div>
+                      </div>
+                      <div class="topbar-actions">
+                        <button class="support-btn">Support</button>
+                        <button class="power-btn"><i class="fa fa-power-off"></i></button>
+                      </div>
+                    </header>
+                    <h2 class="" style="margin-left:30px;color: #606060;font-family: Poppins;font-size: 18px;font-weight: 500;">Dashboard</h2>
+                    <div class="dashboard-divider"></div>
+                    <div class="info-section">
+                      <div class="info-item">
+                        <span class="info-text" style="font-size: 20px;">Information</span>
+                        <i class="fas fa-angle-right" style="margin-top: 10px;"></i>
+                       
+                      </div>
+                      <div class="info-item">
+                        
+                        <img class="info-icon" src="assets/Asset-1-1.png" alt="Logo" class="logo" />
+                        <div class="info-text-box">
+                          <p class="info-text">ISCSI SAN IP:</p>
+                          <p class="info-ip">192.168.10.255</p>
+                        </div>
+                       
+                   
+                      </div>
+                      <div class="info-item">
+                        <img class="info-icon" src="assets/Asset-2-1.png" alt="Logo" class="logo" />
+                        <div class="info-text-box">
+                          <p class="info-text">NAS LAN IP:</p>
+                          <p class="info-ip">192.168.10.255</p>
+                        </div> 
+                      </div>
+                      <div class="info-item">
+                        <img class="info-icon" src="assets/Asset-3-1.png" alt="Logo" class="logo" />
+                        <div class="info-text-box">
+                          <p class="info-text">ISCSI LAN IP:</p>
+                          <p class="info-ip">192.168.10.255</p>
+                        </div>
+                      </div>
+                    </div>
+                
+                    <div class="main-section">
+                      <div class="triangle triangle-left"></div>
+                      <div class="content">
+                        <div class="gauge">
+                          <h3 class="gauge-heading">CPU & Memory</h3>
+                          <div class="gauge-wrapper">
+                            <div class="gauge-item">
+                              <canvas id="cpu" width="200" height="200"></canvas>
+                              <p style="font-color:#b4aea8;font-size: 12px;">CPU</p>
+                            </div>
+                            
+                            <div class="gauge-item">
+                              <canvas id="memory" width="140" height="140"></canvas>
+                              <p style="font-color:#b4aea8;font-size: 12px;">Memory</p>
+                            </div>
+                          </div>
+                          
+                        </div>
+                          <!-- Divider -->
+                            <div class="divider"></div>
+                        <div class="gauge">
+                          <h3 class="gauge-heading">Network Utilization</h3>
+                          <div class="network-wrapper">
+                            <div id="network-revd" class="network-circle">
+                              <p><strong style="color: #9b9c9c;">Network Rcvd</strong ><br><br><span style="color: #656566; font-weight: 700;font-size: 18px;">0.06</span><br><span style="color: #9b9c9c;">megabits/s</span></p>
+                            </div>
+                            <div id="network-sent" class="network-circle">
+                              <p><strong style="color: #9b9c9c;">Network Sent</strong ><br><br><span style="color: #656566; font-weight: 700;font-size: 18px;">0.05</span><br><span style="color: #9b9c9c;">megabits/s</span></p>
+                          
+                            </div>
+                          </div>
+                        </div>
+                        </div>
+                    
+                      <div class="triangle triangle-right"></div>
+                    </div>
+                
+                    <div class="cards">
+                      <div class="card card-one">
+                        <div class="inline-content">
+                         
+                          <div>
+                            <strong>Concentrator Type</strong>
+                            <p>
+                              Name: SC-192-168-10-250<br>
+                              MGMT: 192.168.10.250<br>
+                              ISCSI IP: 192.168.10.250
+                            </p>
+                          </div>
+                          <img src="assets/01-05-GUI-13 1.png" style="position:relative;width: 116px; height: 77px;top: 50px; margin-left: 0px;" alt="Concentrator" />
+                        </div>
+                      </div>
+                    
+                      <div class="card card-two">
+                        <div class="inline-content">
+                          
+                          <div>
+                            <strong>Quick Links</strong>
+                            <strong>Customer  </strong>
+                            <strong>Support</strong>
+                          </div>
+                          <img src="assets/01-05-GUI-17 1.png" style="position:relative;width: 63px; height: 71px;top: 30px; margin-left: 90px;" alt="Support" />
+                        </div>
+                      </div>
+                    
+                      <div class="card card-three">
+                        <div class="inline-content">
+                         
+                          <div>
+                            <strong>Discovered SC’s</strong>
+                            <p>
+                              SC-192-168-10-250<br>
+                              SC-192-168-10-250
+                            </p>
+                            <button class="open-btn">Open</button>
+                          </div>
+                          <img src="assets/01-05-GUI-12 1.png" style="position:relative;width: 117px; height: 44px;top: 50px; margin-left: 0px;" alt="SC" />
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="resources-container">
+                      <div class="resources-header">
+                        <h2 style="font-size: 20px;font-weight: 500;color: #606060;margin-left: 30px;" >Resources</h2>
+                        <div class="legend">
+                          <div><span class="legend-box-one"><span class="used inner-box"></span></span>Used</div>
+                          <div><span class="legend-box-two"><span class="available inner-box"></span></span>Available</div>
+                          <div><span class="legend-box-three"><span class="unmanaged inner-box"></span></span>Not Managed</div>
+                        </div>
+                        
+                      </div>
+                    
+                      <table class="resources-table">
+                        <thead>
+                          <tr>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Path</th>
+                            <th>Total Space<br>(GIB)</th>
+                            <th>Used<br>(GIB)</th>
+                            <th>Free<br>(GIB)</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <!-- Row 1 -->
+                          <tr>
+                            <td>Lorem Ipsum</td>
+                            <td>Lorem Ipsum</td>
+                            <td>Lorem Ipsum</td>
+                            <td>Lorem Ipsum</td>
+                            <td>Lorem Ipsum</td>
+                            <td>Lorem Ipsum</td>
+                          </tr>
+                          <tr>
+                            <td colspan="6">
+                              <div class="progress-bar">
+                                <div class="used" style="width: 91%;">91%</div>
+                                <div class="available" style="width: 9%;"></div>
+                              </div>
+                            </td>
+                          </tr>
+                    
+                          <!-- Row 2 -->
+                          <tr>
+                            <td>Lorem Ipsum</td>
+                            <td>Lorem Ipsum</td>
+                            <td>Lorem Ipsum</td>
+                            <td>Lorem Ipsum</td>
+                            <td>Lorem Ipsum</td>
+                            <td>Lorem Ipsum</td>
+                          </tr>
+                          <tr>
+                            <td colspan="6">
+                              <div class="progress-bar">
+                                <div class="used" style="width: 56%;">56%</div>
+                                <div class="available" style="width: 44%;"></div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Lorem Ipsum</td>
+                            <td>Lorem Ipsum</td>
+                            <td>Lorem Ipsum</td>
+                            <td>Lorem Ipsum</td>
+                            <td>Lorem Ipsum</td>
+                            <td>Lorem Ipsum</td>
+                          </tr>
+                          <tr>
+                            <td colspan="6">
+                              <div class="progress-bar">
+                                <div class="used" style="width: 56%;"></div>
+                                <div class="available" style="width: 44%;"></div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Lorem Ipsum</td>
+                            <td>Lorem Ipsum</td>
+                            <td>Lorem Ipsum</td>
+                            <td>Lorem Ipsum</td>
+                            <td>Lorem Ipsum</td>
+                            <td>Lorem Ipsum</td>
+                          </tr>
+                          <tr>
+                            <td colspan="6">
+                              <div class="progress-bar">
+                                <div class="used" style="width: 91%;">91%</div>
+                                <div class="available" style="width: 9%;"></div>
+                              </div>
+                            </td>
+                          </tr>
+                          
+                          <!-- Add more rows as needed -->
+                        </tbody>
+                      </table>
+                    </div>
+                    <div style="height: 200px;">
+
+                    </div>
+                  </div>
+                
+                </div>
+                
+          </div>     
+         </div>
+
+      
+      </main>
+   
+      <script>
+        function setGaugeRotation(id, value) {
+          const degree = (value / 100) * 180 - 90;
+          $(id + '::after').css('transform', `rotate(${degree}deg)`);
+        }
+    
+        $(document).ready(function () {
+          const cpu = 10;
+          const mem = 50;
+          const rcvd = 6;
+          const sent = 5;
+    
+          $('#cpuGauge').append(`<p>CPU: ${cpu}%</p>`);
+          $('#memoryGauge').append(`<p>Memory: ${mem}%</p>`);
+          $('#networkRcvd').append(`<p>Rcvd: 0.06 Mbps</p>`);
+          $('#networkSent').append(`<p>Sent: 0.05 Mbps</p>`);
+        });
+      </script>
+      <script src="https://bernii.github.io/gauge.js/dist/gauge.min.js"></script>
+      <script>
+        var opts = {
+          angle: 0.10, // Full semicircle
+          lineWidth: 0.3,
+          radiusScale: .6,
+          pointer: {
+            length: 0.72,
+            strokeWidth: 0.029,
+            color: '#b6b7b8'
+          },
+          limitMax: true,
+          limitMin: true,
+          colorStart: '#6F6EA0',
+          colorStop: '#C0C0DB',
+          strokeColor: '#EEEEEE',
+          generateGradient: true,
+          highDpiSupport: true,
+    
+          staticZones: [
+            { strokeStyle: "#f29306", min: 70, max: 72 },  // Red
+            { strokeStyle: "#e4e5e6", min: 72, max: 90 },  // Yellow
+            { strokeStyle: "#e4e5e6", min: 90, max: 100 }  // Green
+          ],
+          staticLabels: {
+            font: "10px sans-serif",
+            labels: [70, 80, 90, 100],
+            color: "#000000",
+            fractionDigits: 0
+          }
+        };
+    
+        var target = document.getElementById('cpu');
+        var gauge = new Gauge(target).setOptions(opts);
+        gauge.maxValue = 100;
+        gauge.setMinValue(70);
+        gauge.animationSpeed = 10;
+        gauge.set(72  ); // Set value here
+
+        
+      </script>
+      <script>
+        var opts = {
+          angle: 0.10, // Full semicircle
+          lineWidth: 0.4,
+          radiusScale: .6,
+          pointer: {
+            length: 0.82,
+            strokeWidth: 0.029,
+            color: '#b6b7b8'
+          },
+          limitMax: true,
+          limitMin: true,
+          colorStart: '#6F6EA0',
+          colorStop: '#C0C0DB',
+          strokeColor: '#EEEEEE',
+          generateGradient: true,
+          highDpiSupport: true,
+    
+          staticZones: [
+            { strokeStyle: "#d13611", min: 70, max: 72 },  // Red
+            { strokeStyle: "#e4e5e6", min: 72, max: 90 },  // Yellow
+            { strokeStyle: "#e4e5e6", min: 90, max: 100 }  // Green
+          ],
+          staticLabels: {
+            font: "10px sans-serif",
+            labels: [70, 80, 90, 100],
+            color: "#000000",
+            fractionDigits: 0
+          }
+        };
+    
+        var target = document.getElementById('memory');
+        var gauge = new Gauge(target).setOptions(opts);
+        gauge.maxValue = 100;
+        gauge.setMinValue(70);
+        gauge.animationSpeed = 10;
+        gauge.set(72); // Set value here
+
+        
+      </script>
+        <!-- Include ProgressBar.js -->
+        <script src="https://cdn.jsdelivr.net/npm/progressbar.js"></script>
+        <script>
+         var bar1 = new ProgressBar.Circle('#network-revd', {
+           strokeWidth: 6,
+           easing: 'easeInOut',
+           duration: 1400,
+           color: '#3f51b5',
+           trailColor: '#e4e5e6',
+           trailWidth: 6,
+           svgStyle: null
+         });
+     
+         bar1.animate(0.06); // 6% for 0.06 Mbps
+     
+         var bar2 = new ProgressBar.Circle('#network-sent', {
+           strokeWidth: 6,
+           easing: 'easeInOut',
+           duration: 1400,
+           color: '#d13611',
+           trailColor: '#e4e5e6',
+           trailWidth: 6,
+           svgStyle: null
+         });
+     
+         bar2.animate(0.2); // 5% for 0.05 Mbps
+       </script>
+       <script>
+       $(function () {
+              // Default open logic
+              $('.sidebar-menu li.open > ul.submenu').show(); // Show submenu if parent has 'open'
+              $('.sidebar-menu li.open > .dropdown-toggle .arrow, .sidebar-menu li.open > .dropdown-toggle .sub-arrow').addClass('rotate');
+
+              // Click toggle logic
+              $('.sidebar-menu').on('click', '.dropdown-toggle', function (e) {
+                e.stopPropagation();
+
+                const $toggle = $(this);
+                const $li = $toggle.closest('li');
+                const $submenu = $li.children('ul.submenu');
+
+                const $arrow = $toggle.find('> .arrow');
+                const $subArrow = $toggle.find('> .sub-arrow');
+
+                if ($li.hasClass('open')) {
+                  $submenu.slideUp(200);
+                  $li.removeClass('open');
+                  $arrow.removeClass('rotate');
+                  $subArrow.removeClass('rotate');
+                } else {
+                  $submenu.slideDown(200);
+                  $li.addClass('open');
+                  $arrow.addClass('rotate');
+                  $subArrow.addClass('rotate');
+                }
+              });
+            });
+
+          </script>
+      
+  
+  
+   <!-- <script>
+            
+//   document.querySelectorAll('.has-dropdown > span').forEach(item => {
+//     item.addEventListener('click', () => {
+//       const parentLi = item.closest('.has-dropdown');
+//       parentLi.classList.toggle('open');
+//     });
+//   });
+// </script> -->
+
+   
